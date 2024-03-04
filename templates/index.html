@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Weather Project</title>
+  </head>
+  <body>
+    <form method="post" action="{{ url_for('submit_form') }}">
+      <input required type="text" name="city_name" />
+      <button type="submit">Submit</button>
+    </form>
+
+    {% if city_name %}
+    <h1>User Input: {{ city_name }}</h1>
+    {% if data %}
+    <p>City: {{ data['city']['name'] }}</p>
+    <p>Temp: {{ data['list'][0]['main']['temp'] }}</p>
+    {% else %}
+    <p>Error fetching weather data. Please try again.</p>
+    {% endif %} {% endif %}
+  </body>
+</html>
