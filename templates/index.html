@@ -4,20 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python Weather Project</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <form method="post" action="{{ url_for('submit_form') }}">
-      <input required type="text" name="city_name" />
-      <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+      <main class="main-container">
+        <form
+          method="post"
+          action="{{ url_for('submit_form') }}"
+          class="input-form"
+        >
+          <input required type="text" name="city_name" />
+          <button type="submit">Submit</button>
+        </form>
+        <section class="main-weather" id="displayDetails">
+          <h1>There is no data</h1>
+        </section>
+      </main>
+      <aside>{% include "weather_by_day.html" %}</aside>
+    </div>
+    <script>
+      function displayCharacter(item) {
+        console.log("Received item:", item);
 
-    {% if city_name %}
-    <h1>User Input: {{ city_name }}</h1>
-    {% if data %}
-    <p>City: {{ data['city']['name'] }}</p>
-    <p>Temp: {{ data['list'][0]['main']['temp'] }}</p>
-    {% else %}
-    <p>Error fetching weather data. Please try again.</p>
-    {% endif %} {% endif %}
+        // Update the content of the 'displayDetails' element
+        document.getElementById("displayDetails").textContent = item;
+      }
+    </script>
   </body>
 </html>

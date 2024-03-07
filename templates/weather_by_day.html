@@ -1,0 +1,11 @@
+<ul>
+  {% if data %} {% for item in data['list'][6::24] %}
+  <li onclick="displayCharacter('{{  item['main']['temp']  }}')">
+    Time: {{ item['dt_txt'] }}
+  </li>
+  {% endfor %} {% else %}
+  <li>
+    <p>No City Found!</p>
+  </li>
+  {% endif %}
+</ul>
