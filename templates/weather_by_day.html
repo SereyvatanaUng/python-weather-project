@@ -1,7 +1,8 @@
 <ul>
-  {% if data %} {% for item in data['list'][6::24] %}
-  <li onclick="displayCharacter('{{  item['main']['temp']  }}')">
-    Time: {{ item['dt_txt'] }}
+  {% if data %} {% for index in range(6, data['list'][6::24]|length * 24 + 6,
+  24) %}
+  <li onclick="displayCharacter({{data}},{{ index }})">
+    Time: {{ data['list'][index]['dt_txt'] }}
   </li>
   {% endfor %} {% else %}
   <li>
