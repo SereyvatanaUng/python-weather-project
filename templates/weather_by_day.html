@@ -1,8 +1,8 @@
 <ul>
-  {% if data %} {% for index in range(6, data['list'][6::24]|length * 24 + 6,
-  24) %}
-  <li onclick="displayCharacter({{data}},{{ index }})">
-    Time: {{ data['list'][index]['dt_txt'] }}
+  {% if data %} {# Calculate start and step values #} {% set start = 6 %} {% set
+  step = 24 %} {% for i in range(start, data['list']|length, step) %}
+  <li onclick="displayWeather({{ i }}, {{data}})">
+    Time: {{ data['list'][i]['dt_txt'] }}
   </li>
   {% endfor %} {% else %}
   <li>

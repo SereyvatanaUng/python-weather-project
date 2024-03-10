@@ -21,20 +21,39 @@
           <input required type="text" name="city_name" />
           <button type="submit">Submit</button>
         </form>
+
+        {% if data %}
         <section class="main-weather" id="displayDetails">
+          <div>
+            <h1>There is no selected data.</h1>
+          </div>
+        </section>
+        {% else %}
+        <section class="main-weather">
           <h1>There is no data</h1>
         </section>
+        {% endif %}
       </main>
       <aside>{% include "weather_by_day.html" %}</aside>
     </div>
+
     <script>
-      function displayCharacter(data, item) {
-        console.log("Received item:", item);
+      function displayWeather(item, data) {
+        const detailsContainer = document.getElementById("displayDetails");
+        console.log(data);
+        console.log(item);
 
-        // Update the content of the 'displayDetails' element
-        document.getElementById("displayDetails").textContent = item;
+        detailsContainer.innerHTML = "";
 
-        console.log(data.list[item]);
+        // Display the content here
+        const contentHTML = `
+          <div>
+            <p>${data.list[item].main.temp}</p>
+            <p>${data.list[item].main.humidity}</p>
+          </div>
+        `;
+
+        detailsContainer.innerHTML = contentHTML;
       }
     </script>
   </body>
