@@ -18,7 +18,7 @@
           action="{{ url_for('submit_form') }}"
           class="input-form"
         >
-          <input required type="text" name="city_name" />
+          <input required type="text" name="city_name" placeholder="City Name" />
           <button type="submit">Submit</button>
         </form>
 
@@ -30,7 +30,7 @@
         </section>
         {% else %}
         <section class="main-weather">
-          <h1>There is no data</h1>
+          <h1>Please input city name!</h1>
         </section>
         {% endif %}
       </main>

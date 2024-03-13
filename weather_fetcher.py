@@ -1,7 +1,7 @@
 import requests
 
-API_KEY = '096122609932057e7534c8ba725747d4'
-BASE_API = 'https://pro.openweathermap.org/data/2.5/forecast/hourly'
+API_KEY = '240f20f5bced683b4fd485f12711ff97'
+BASE_API = 'https://api.openweathermap.org/data/2.5/forecast'
 
 
 def fetch_weather_data(city_name):

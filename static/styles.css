@@ -52,23 +52,13 @@ li,
   gap: 2rem;
 }
 
-.display-result {
-  width: 50%;
-}
-
-.big-icon {
-  background-color: #fff;
-  width: 30%;
-  margin: auto;
-}
-
 .input-form button {
   font: inherit;
   cursor: pointer;
   border: 1px solid #ff0077;
   background-color: #ff0077;
   color: white;
-  padding: 0.05rem 1rem;
+  padding: 0.5rem 1rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 }
 
@@ -81,6 +71,6 @@ li,
 
 .input-form input {
   font: inherit;
-  padding: 0.15rem;
+  padding: 0.5rem;
   width: 75%;
 }
