@@ -18,7 +18,12 @@
           action="{{ url_for('submit_form') }}"
           class="input-form"
         >
-          <input required type="text" name="city_name" placeholder="City Name" />
+          <input
+            required
+            type="text"
+            name="city_name"
+            placeholder="City Name"
+          />
           <button type="submit">Submit</button>
         </form>
 
@@ -49,7 +54,7 @@
         const contentHTML = `
           <div>
             <p>${data.list[item].main.temp}</p>
-            <p>${data.list[item].main.humidity}</p>
+            <p>${data.list[item].weather[0].icon}</p>
           </div>
         `;
 

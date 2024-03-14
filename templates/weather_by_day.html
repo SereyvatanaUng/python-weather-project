@@ -1,8 +1,11 @@
 <ul>
-  {% if data %} {# Calculate start and step values #} {% set start = 6 %} {% set
-  step = 24 %} {% for i in range(start, data['list']|length, step) %}
+  {% if data %} {# Calculate start and step values #} {% set start = 2 %} {% set
+  step = 8 %} {% for i in range(start, data['list']|length, step) %}
   <li onclick="displayWeather({{ i }}, {{data}})">
-    Time: {{ data['list'][i]['dt_txt'] }}
+    <img
+      src="/static/images/{{ data['list'][i]['weather'][0]['icon'] }}.svg"
+      alt="Weather Image"
+    />
   </li>
   {% endfor %} {% else %}
   <li>
