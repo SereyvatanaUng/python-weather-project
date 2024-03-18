@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .container {
@@ -24,26 +24,51 @@ body {
   background-color: pink;
 }
 
-aside {
+.side-bar {
   width: 30%;
   background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-ul {
+.side-bar img {
+  height: 72px;
+}
+.side-bar ul {
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.side-bar li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 li,
 .main-weather,
 .input-form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
   width: 90%;
+}
+
+.weather-desc {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.weather-desc img {
+  width: 40%;
+  height: 12rem;
+  margin: 2rem 1rem;
 }
 
 .weather {

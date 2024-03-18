@@ -1,15 +1,19 @@
+{% if data %}
+<h2>5 Days Forecast</h2>
 <ul>
-  {% if data %} {# Calculate start and step values #} {% set start = 2 %} {% set
-  step = 8 %} {% for i in range(start, data['list']|length, step) %}
+  {% set start = 2 %} {% set step = 8 %} {% for i in range(start,
+  data['list']|length, step) %}
   <li onclick="displayWeather({{ i }}, {{data}})">
+    <p>{{ data['list'][i]['weather'][0]['main'] }}</p>
     <img
       src="/static/images/{{ data['list'][i]['weather'][0]['icon'] }}.svg"
       alt="Weather Image"
     />
+    <p>{{ data['list'][i]['main']['temp'] }}°C</p>
   </li>
-  {% endfor %} {% else %}
-  <li>
-    <p>No City Found!</p>
-  </li>
-  {% endif %}
 </ul>
+{% endfor %} {% else %}
+<li>
+  <h2>No City Found!</h2>
+</li>
+{% endif %}

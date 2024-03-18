@@ -39,7 +39,7 @@
         </section>
         {% endif %}
       </main>
-      <aside>{% include "weather_by_day.html" %}</aside>
+      <aside class="side-bar">{% include "weather_by_day.html" %}</aside>
     </div>
 
     <script>
@@ -52,9 +52,13 @@
 
         // Display the content here
         const contentHTML = `
-          <div>
-            <p>${data.list[item].main.temp}</p>
-            <p>${data.list[item].weather[0].icon}</p>
+          <div class="weather-desc">
+            <div class="">
+              <h1>Weather in ${data.city.name}</h1>
+              <h1>${data.list[item].main.temp}°C</h1>
+              <p>Feeling Like: ${data.list[item].main.feels_like}°C</p>
+            </div>
+            <img src="/static/images/${data.list[item].weather[0].icon}.svg" alt="Weather Image" />
           </div>
         `;
 
