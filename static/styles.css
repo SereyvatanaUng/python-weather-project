@@ -9,24 +9,32 @@ html {
 
 body {
   margin: 0;
-  min-height: 80vh;
 }
 
 .container {
   display: flex;
-  padding: 1rem;
-  gap: 1rem;
+  padding: 0.5rem;
+  gap: 0.25rem;
   min-height: 100vh;
+
+  background-image: url("/static/images/bg-img.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .main-container {
   width: 70%;
-  background-color: pink;
+}
+
+.main-weather {
+  width: 90%;
+  min-height: 86%;
 }
 
 .side-bar {
   width: 30%;
-  background-color: lightseagreen;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,26 +46,46 @@ body {
 
 .side-bar ul {
   width: 100%;
+  height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0.25rem;
   list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .side-bar li {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  padding: 0.825rem;
+  border-radius: 10px;
+  text-align: center;
+
+  background: linear-gradient(76deg, #482fe940 0%, #fee1d980 52.02%);
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
 }
 
-li,
+.side-bar li:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
 .main-weather,
-.input-form {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+.input-form,
+.side-bar {
   margin: 0.5rem auto;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-  width: 90%;
+
+  background: linear-gradient(76deg, #482fe940 0%, #fee1d980 52.02%);
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
 }
 
 .weather-desc {
@@ -68,7 +96,7 @@ li,
 
 .weather-desc img {
   width: 40%;
-  height: 12rem;
+  height: 8rem;
   margin: 2rem 1rem;
 }
 
@@ -76,6 +104,10 @@ li,
   display: flex;
   justify-content: space-evenly;
   gap: 2rem;
+}
+
+.input-form {
+  width: 90%;
 }
 
 .input-form button {

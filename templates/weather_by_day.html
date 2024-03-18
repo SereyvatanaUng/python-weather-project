@@ -1,8 +1,8 @@
 {% if data %}
 <h2>5 Days Forecast</h2>
 <ul>
-  {% set start = 0 %} {% set step = 8 %} {% for i in range(start,
-  data['list']|length, step) %}
+  {% set start = 0 %} {% set step = 8 %} {% for i in
+  range(start,data['list']|length, step) %}
   <li onclick="displayWeather({{ i }}, {{data}})">
     <p>{{ data['list'][i]['weather'][0]['main'] }}</p>
     <img
@@ -11,8 +11,10 @@
     />
     <p>{{ data['list'][i]['main']['temp'] }}°C</p>
   </li>
+  {% endfor %}
 </ul>
-{% endfor %} {% else %}
+
+{% else %}
 <li>
   <h2>No City Found!</h2>
 </li>
