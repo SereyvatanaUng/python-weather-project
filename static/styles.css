@@ -35,6 +35,7 @@ body {
 .side-bar img {
   height: 72px;
 }
+
 .side-bar ul {
   width: 100%;
   margin: 0;
@@ -98,4 +99,14 @@ li,
   font: inherit;
   padding: 0.5rem;
   width: 75%;
+}
+
+.small-weather-dispaly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.small-weather-dispaly img {
+  width: 56px;
+  height: 56px;
 }

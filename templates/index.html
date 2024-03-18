@@ -45,24 +45,48 @@
     <script>
       function displayWeather(item, data) {
         const detailsContainer = document.getElementById("displayDetails");
-        console.log(data);
-        console.log(item);
 
         detailsContainer.innerHTML = "";
 
+        let smallWeatherDisplay = "";
+
+        for (let i = item + 1; i < item + 8 && i <= data.cnt; i++) {
+          console.log(i);
+          smallWeatherDisplay += `
+            <div>
+              <p>${data.list[i].dt_txt
+                .split(" ")[1]
+                .split(":")
+                .slice(0, 2)
+                .join(":")}</p>
+              <img src="/static/images/${
+                data.list[i].weather[0].icon
+              }.svg" alt="Weather Image" />
+              <p>${data.list[i].main.temp}°C</p>
+            </div>
+          `;
+        }
+
         // Display the content here
-        const contentHTML = `
+        const weatherContent = `
           <div class="weather-desc">
-            <div class="">
+            <div>
               <h1>Weather in ${data.city.name}</h1>
               <h1>${data.list[item].main.temp}°C</h1>
               <p>Feeling Like: ${data.list[item].main.feels_like}°C</p>
             </div>
             <img src="/static/images/${data.list[item].weather[0].icon}.svg" alt="Weather Image" />
           </div>
+
+          <hr/>
+
+          <p>TODAY FORECAST</p>
+          <div class="small-weather-dispaly">
+            ${smallWeatherDisplay}
+          </div>
         `;
 
-        detailsContainer.innerHTML = contentHTML;
+        detailsContainer.innerHTML = weatherContent;
       }
     </script>
   </body>

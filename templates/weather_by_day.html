@@ -1,7 +1,7 @@
 {% if data %}
 <h2>5 Days Forecast</h2>
 <ul>
-  {% set start = 2 %} {% set step = 8 %} {% for i in range(start,
+  {% set start = 0 %} {% set step = 8 %} {% for i in range(start,
   data['list']|length, step) %}
   <li onclick="displayWeather({{ i }}, {{data}})">
     <p>{{ data['list'][i]['weather'][0]['main'] }}</p>
