@@ -71,8 +71,8 @@
           <div class="weather-desc">
             <div>
               <h1>Weather in ${data.city.name}</h1>
+              <h1>${data.list[item].weather[0].main}</h1>
               <h1>${data.list[item].main.temp}°C</h1>
-              <p>Feeling Like: ${data.list[item].main.feels_like}°C</p>
             </div>
             <img src="/static/images/${data.list[item].weather[0].icon}.svg" alt="Weather Image" />
           </div>
@@ -90,7 +90,7 @@
           <div class="small-weather-dispaly">
             <p>Feel Like: ${data.list[item].main.feels_like}°C</p>
             <p>Humidity: ${data.list[item].main.humidity}</p>
-            <p>Descriptioin: ${data.list[item].weather[0].description}</p>
+            <p>Description: ${data.list[item].weather[0].description}</p>
             <p>wind: ${data.list[item].wind.speed} km/h</p>
           </div>
         `;
